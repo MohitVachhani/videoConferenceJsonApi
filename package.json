@@ -1,0 +1,41 @@
+{
+  "name": "webexjsonapi",
+  "version": "1.0.0",
+  "description": "This will be a package which will allow you to make a webex training session using json input/outputs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && babel src -d dist --copy-files",
+    "clean": "rimraf dist/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohitVachhani/webexJsonApi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohitVachhani/webexJsonApi/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-syntax-async-generators": "^7.2.0",
+    "@babel/plugin-transform-destructuring": "^7.4.4",
+    "@babel/plugin-transform-flow-strip-types": "^7.4.4",
+    "@babel/plugin-transform-for-of": "^7.4.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/register": "^7.4.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "rimraf": "^2.5.4"
+  },
+  "homepage": "https://github.com/MohitVachhani/webexJsonApi#readme"
+}
