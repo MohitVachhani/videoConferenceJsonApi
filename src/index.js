@@ -1,3 +1,1 @@
-export async function init(){
-  console.log('Hello world');
-}
+export { createTrainingHelper } from './helper/webexHelper';
