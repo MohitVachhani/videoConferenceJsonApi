@@ -44,7 +44,15 @@
   "dependencies": {
     "eslint-scope": "^5.0.0",
     "lodash": "^4.17.4",
-    "rimraf": "^2.5.4"
+    "moment-timezone": "^0.5.28",
+    "rimraf": "^2.5.4",
+    "shortid": "^2.2.15",
+    "webex-time-zones": "^0.2.2",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.19",
+    "jsontoxml": "^1.0.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   },
   "homepage": "https://github.com/MohitVachhani/webexJsonApi#readme"
 }

@@ -1,5 +1,5 @@
 function getSiteName(serviceUrl) {
-  const siteName = serviceUrl.split("//")[1].split(".webex")[0];
+  const siteName = serviceUrl.split('//')[1].split('.webex')[0];
   return siteName;
 }
 
@@ -18,7 +18,7 @@ export function makeHeaderJsonFromConfig(config) {
     };
     return headerJson;
   } catch (error) {
-    console.log("Error in makeHeaderJsonFromConfig", error);
+    console.log('Error in makeHeaderJsonFromConfig', error);
     throw error;
   }
 }
