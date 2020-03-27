@@ -13,9 +13,7 @@ Second input will contains all the properties of webex training meeting.
 
 Authentication input -> 
 {
-  webExID:,  
-  password,
-  serviceUrl
+  webExID,  password, serviceUrl
 }
 
 Please check with your webex portal and then fill this information and pass it as the first param of the function.
