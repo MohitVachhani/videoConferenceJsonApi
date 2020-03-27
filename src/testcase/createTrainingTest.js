@@ -7,6 +7,7 @@ async function createTrainingTest(createMeetingParams) {
       webexConfigs,
       createMeetingParams
     );
+    console.log('Result:');
     console.log(result);
   } catch (error) {
     console.log('Error in createTrainingTest', error);
