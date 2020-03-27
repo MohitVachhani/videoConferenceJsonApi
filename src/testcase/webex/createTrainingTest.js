@@ -1,5 +1,5 @@
 import { createTrainingHelper } from '../../helper/webexHelper';
-import { webexConfigs } from '../../config';
+import { webexConfigs } from './config';
 
 async function createTrainingTest(createMeetingParams) {
   try {

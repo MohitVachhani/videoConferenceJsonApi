@@ -1,7 +1,7 @@
 {
-  "name": "webexjsonapi",
-  "version": "1.0.0",
-  "description": "This will be a package which will allow you to make a webex training session using json input/outputs.",
+  "name": "webex-training-center-api",
+  "version": "1.0.1",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
