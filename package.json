@@ -39,7 +39,8 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "husky": "^1.1.1"
   },
   "dependencies": {
     "eslint-scope": "^5.0.0",
@@ -53,6 +54,11 @@
     "jsontoxml": "^1.0.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
   },
   "homepage": "https://github.com/MohitVachhani/webexJsonApi#readme"
 }
