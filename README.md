@@ -1,3 +1,3 @@
 # webex-training-center-api
 
-This will be a package which will allow you to make a webex training session using json input/outputs.
+This is a package which will allow you to make a webex training session using json input/outputs.
