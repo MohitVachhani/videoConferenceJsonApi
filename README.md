@@ -11,12 +11,11 @@ createTrainingHelper function will required two inputs.
 First input for authentication
 Second input will contains all the properties of webex training meeting.
 
-Authentication input -> {
-  webExID: '*****',
-  
-  password: '******',
-  
-  serviceUrl: '******'
+Authentication input -> 
+{
+  webExID:,  
+  password,
+  serviceUrl
 }
 
 Please check with your webex portal and then fill this information and pass it as the first param of the function.
