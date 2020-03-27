@@ -13,7 +13,9 @@ Second input will contains all the properties of webex training meeting.
 
 Authentication input -> {
   webExID: '*****',
+  
   password: '******',
+  
   serviceUrl: '******'
 }
 
