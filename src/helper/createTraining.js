@@ -4,7 +4,7 @@ import { makeHeaderJsonFromConfig } from './common/makeHeaderJsonFromConfig';
 import { getStartDate, getTimeZoneIdFromTimeZone } from './common/dateHelper';
 import {
   convertJsonToXml,
-  convertXmlToJsonForReporting
+  convertXmlToJsonPromisfied
 } from './common/convertor';
 import { getRequestUrl, executeXMLRequest } from './common/executeXmlRequest';
 import { getAttendeUrl } from './getAttendeUrl';
@@ -159,8 +159,12 @@ function getSessionKeyFromResult(jsonResult) {
 }
 
 async function getHostAndAttendeUrl(headerJson, meetingKey) {
-  const hostUrl = await getHostUrl(headerJson, meetingKey);
-  const attendeUrl = await getAttendeUrl(headerJson, meetingKey);
+  const fetchUrlPromiseArray = [];
+  fetchUrlPromiseArray.push(
+    getHostUrl(headerJson, meetingKey),
+    getAttendeUrl(headerJson, meetingKey)
+  );
+  const [hostUrl, attendeUrl] = await Promise.all(fetchUrlPromiseArray);
   return {
     hostUrl,
     attendeUrl
@@ -172,14 +176,13 @@ export async function createTrainingHelper(config, inputJson) {
     validateCreateTrainingInput(inputJson);
     const headerJson = makeHeaderJsonFromConfig(config);
     const createTrainingParams = makeCreateTrainingParams(inputJson);
-    console.log(JSON.stringify(createTrainingParams, null, 2));
     const xmlRequest = createTrainingXMLRequestMaker(
       headerJson,
       createTrainingParams
     );
     const url = getRequestUrl(headerJson);
     const xmlResult = await executeXMLRequest(xmlRequest, url);
-    const jsonResult = await convertXmlToJsonForReporting(xmlResult);
+    const jsonResult = await convertXmlToJsonPromisfied(xmlResult);
     checkErrorOccuredByCreateTraining(jsonResult);
     const sessionKey = getSessionKeyFromResult(jsonResult);
     const { hostUrl, attendeUrl } = await getHostAndAttendeUrl(

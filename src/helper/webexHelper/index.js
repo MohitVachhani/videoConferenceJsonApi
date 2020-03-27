@@ -1,1 +1,0 @@
-export { createTrainingHelper } from './createTraining';

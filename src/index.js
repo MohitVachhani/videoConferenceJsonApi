@@ -1,1 +1,1 @@
-export { createTrainingHelper } from './helper/webexHelper';
+export { createTrainingHelper } from './helper/createTraining';

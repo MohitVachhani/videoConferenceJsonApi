@@ -12,7 +12,7 @@ export function convertXmlToJson(xml) {
   return jsonObject;
 }
 
-export function convertXmlToJsonForReporting(xml) {
+export function convertXmlToJsonPromisfied(xml) {
   return new Promise((resolve) => {
     xmltoJson.parseString(xml, (error, result) => {
       resolve(result);
