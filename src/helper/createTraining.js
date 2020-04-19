@@ -9,6 +9,7 @@ import {
 import { getRequestUrl, executeXMLRequest } from './common/executeXmlRequest';
 import { getAttendeUrl } from './getAttendeUrl';
 import { getHostUrl } from './getHostUrl';
+import { checkStatusOfXmlRequest } from './common/checkStatusOfXmlRequest';
 
 const password = shortid.generate();
 const requiredKeys = [
@@ -136,22 +137,6 @@ function createTrainingXMLRequestMaker(headerJson, trainingCenterJson) {
   return xmlRequest;
 }
 
-function checkErrorOccuredByCreateTraining(jsonResult) {
-  console.log('Checking Whether Error Occured while creating training session');
-  const status =
-    jsonResult['serv:message']['serv:header'][0]['serv:response'][0][
-      'serv:result'
-    ][0];
-  console.log('Status:', status);
-  if (status.toString() === 'FAILURE') {
-    const reason =
-      jsonResult['serv:message']['serv:header'][0]['serv:response'][0][
-        'serv:reason'
-      ][0];
-    throw new Error('Error occured while creating training:  ' + reason);
-  }
-}
-
 function getSessionKeyFromResult(jsonResult) {
   return jsonResult['serv:message']['serv:body'][0]['serv:bodyContent'][0][
     'train:sessionkey'
@@ -183,7 +168,7 @@ export async function createTrainingHelper(config, inputJson) {
     const url = getRequestUrl(headerJson);
     const xmlResult = await executeXMLRequest(xmlRequest, url);
     const jsonResult = await convertXmlToJsonPromisfied(xmlResult);
-    checkErrorOccuredByCreateTraining(jsonResult);
+    checkStatusOfXmlRequest(jsonResult);
     const sessionKey = getSessionKeyFromResult(jsonResult);
     const { hostUrl, attendeUrl } = await getHostAndAttendeUrl(
       headerJson,
